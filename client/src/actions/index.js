@@ -1,5 +1,6 @@
 import streams from '../api/streams'
 import history from '../history'
+import testMe from '../api/testMe'
 
 export const signIn = (userinfo) => {
     return {
@@ -32,6 +33,22 @@ export const fetchStreams = () => async dispatch => {
     })
 }
 
+/*
+export const test1 = () => async dispatch => {
+    const response = await testMe.get('/todos');
+    dispatch({
+        type: 'TEST', payload: response.data
+    })
+}
+*/
+export const test1 = () => async dispatch => {
+    const response = await testMe.post('/todos');
+    dispatch({
+        type: 'TEST', payload: response.data
+    })
+}
+
+
 export const fetchStream = (id) => async dispatch => {
     const response = await streams.get(`/Books/${id}`)
     dispatch({
@@ -45,6 +62,19 @@ export const fetchUser = (userId) => async dispatch => {
     dispatch({
         type: 'FETCH_USER', payload: response.data
     })
+}
+
+export const addToBasket = (book) => {
+    return{
+        type: 'ADD_TO_BASKET',
+        payload:book
+    }
+}
+
+export const emptyBasket = () =>{
+    return{
+        type: 'EMPTY_BASKET'
+    }
 }
 
 export const editStream = (id, formValues) => async dispatch => {

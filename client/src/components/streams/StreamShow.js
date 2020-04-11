@@ -1,10 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchStream } from '../../actions'
+import { fetchStream , addToBasket} from '../../actions'
 
 class StreamShow extends React.Component {
     componentDidMount() {
         this.props.fetchStream(this.props.match.params.id)
+    }
+    addTo(){
+        console.log("add this to basket")
+        this.props.addToBasket(this.props.stream)
+
     }
     render() {
         if (!this.props.stream) {
@@ -20,7 +25,7 @@ class StreamShow extends React.Component {
                     <h1>{book.title}</h1>
                     <h5>{book.desc}</h5>
                     <h5>{book.price}</h5>
-
+                    <button onClick={() => { this.addTo()}} className="ui button">Add to Basket</button>
                 </div>
             )
         }
@@ -31,4 +36,4 @@ const mapStateToProps = (state, ownProps) => {
         stream: state.streams[ownProps.match.params.id]
     }
 }
-export default connect(mapStateToProps, { fetchStream })(StreamShow)
+export default connect(mapStateToProps, { fetchStream , addToBasket})(StreamShow)

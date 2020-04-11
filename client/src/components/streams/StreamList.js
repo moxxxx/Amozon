@@ -1,11 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchStreams, deleteStream } from '../../actions'
+import { fetchStreams, deleteStream , test1} from '../../actions'
 import { Link } from 'react-router-dom'
 import Modal from '../Modal'
 class StreamList extends React.Component {
     componentDidMount() {
         this.props.fetchStreams()
+        this.props.test1()
     }
     state = { renderModal: false, selectedStream: null }
 
@@ -102,11 +103,21 @@ class StreamList extends React.Component {
             </>
         )
     }
+    renderSearch = () => {
+        return(
+            <div className="ui fluid icon input">
+                <input type="text" placeholder="Search a book..." />
+                <i className="search icon"></i>
+            </div>
+        )
 
+
+    }
 
     render() {
         return (
             <div>
+                {this.renderSearch()}
                 <h2>Recommended</h2>
                 <div className="ui celled list">{this.renderList()}</div>
                 {this.renderCreate()}
@@ -125,4 +136,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { fetchStreams, deleteStream })(StreamList)
+export default connect(mapStateToProps, { fetchStreams, deleteStream, test1 })(StreamList)

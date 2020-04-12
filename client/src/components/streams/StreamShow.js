@@ -38,7 +38,7 @@ class StreamShow extends React.Component {
 }
 const mapStateToProps = (state, ownProps) => {
     return {
-        book: findBook(state.books, ownProps.match.params.book_id)
+        book: findBook(state.books, ownProps.match.params.id)
     }
 }
 

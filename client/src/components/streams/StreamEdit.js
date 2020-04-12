@@ -35,6 +35,6 @@ class StreamEdit extends React.Component {
 }
 const mapStateToProps = (state, props) => {
     // console.log(props)
-    return { stream: state.streams[props.match.params.book_id], userId: state.auth.userId }
+    return { stream: state.streams[props.match.params.id], userId: state.auth.userId }
 } // props can access all props in the StreamEdit component
 export default connect(mapStateToProps, { fetchStream, editStream })(StreamEdit)

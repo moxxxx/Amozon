@@ -40,7 +40,6 @@ class StreamForm extends React.Component {
                 onSubmit={this.props.handleSubmit(this.onSubmit)}>
                 <Field name="book_name" component={this.renderInput} label="Enter Title" />
                 <Field name="inventory" component={this.renderInput} label="Enter inventory" />
-                <Field name="public_name" component={this.renderInput} label="Enter Price" />
                 <Field name="num_page" component={this.renderInput} label="Enter number of page" />
                 <Field name="author_name" component={this.renderInput} label="Enter author" />
                 <Field name="genre_name" component={this.renderInput} label="Enter genre name" />
@@ -48,8 +47,7 @@ class StreamForm extends React.Component {
                 <Field name="pub_date" component={this.renderInput} label="Enter published date   ('3/12/1994', ‘4/29/2020’) " />
                 <Field name="pub_id" component={this.renderInput} label="Enter pub_id (1~5)" />
                 <Field name="price" component={this.renderInput} label="Enter price" />
-                <Field name="isbn" component={this.renderInput} label="Enter price" />
-                <Field name="num_page" component={this.renderInput} label="Enter pages" />
+                <Field name="isbn" component={this.renderInput} label="Enter isbn" />
                 <Field name="on_shelf" component={this.renderInput} label="Enter shelf" />
                 <button className="ui button primary">Submit</button>
             </form >

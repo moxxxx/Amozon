@@ -79,8 +79,7 @@ export const emptyBasket = () =>{
 }
 
 
-export const register = async ( getState) => {
-    const {  } = getState().auth
+export const register = (info) => {
     db.post('/Books', { "Hello": "World" })
 
 }

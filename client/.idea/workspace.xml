@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d4d3b51b-f146-4683-ab63-968fae15a5d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GoogleAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GoogleAuth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/streams/ShowBasket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/streams/ShowBasket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/authReducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/authReducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/userReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/userReducer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,7 +29,7 @@
           <entry key="bmp" value="1" />
           <entry key="css" value="1" />
           <entry key="html" value="1" />
-          <entry key="js" value="76" />
+          <entry key="js" value="78" />
           <entry key="json" value="3" />
           <entry key="png" value="2" />
           <entry key="txt" value="1" />
@@ -44,7 +41,7 @@
           <entry key="HTML" value="1" />
           <entry key="Image" value="3" />
           <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="76" />
+          <entry key="JavaScript" value="78" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -52,14 +49,14 @@
         <counts>
           <entry key="css" value="13" />
           <entry key="html" value="3" />
-          <entry key="js" value="3262" />
+          <entry key="js" value="3280" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="13" />
           <entry key="HTML" value="3" />
-          <entry key="JavaScript" value="3262" />
+          <entry key="JavaScript" value="3280" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -75,7 +72,7 @@
         <entry file="file://$PROJECT_DIR$/src/components/streams/ShowBasket.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+              <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -86,10 +83,33 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/actions/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
-              <caret line="81" column="21" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="21" />
+            <state relative-caret-position="507">
+              <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/streams/StreamCreate.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="42" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/streams/StreamDelete.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -142,30 +162,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="606">
               <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/streams/SearchForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/streams/PaymentForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -343,12 +339,12 @@
       <option name="presentableId" value="Default" />
       <updated>1586294396455</updated>
       <workItem from="1586294397602" duration="9999000" />
-      <workItem from="1586572230822" duration="17104000" />
+      <workItem from="1586572230822" duration="17433000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27103000" />
+    <option name="totallyTimeSpent" value="27432000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="945" extended-state="0" />
@@ -412,16 +408,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/logo.bmp">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/streams/StreamCreate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="20" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/streams/Checkout.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -627,16 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="81" column="21" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/streams/StreamShow.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="606">
@@ -657,10 +633,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/streams/StreamCreate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="42" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/streams/StreamDelete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/streams/ShowBasket.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>

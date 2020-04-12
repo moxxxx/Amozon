@@ -14,12 +14,7 @@ class GoogleAuth extends React.Component {
                 console.log(this.auth)
                 this.onAuthChange(this.auth.isSignedIn.get())
                 this.auth.isSignedIn.listen(this.onAuthChange)
-            }).then(() => {
-                const info = {name: this.auth.currentUser.get().getId(),  email: this.auth.currentUser.get().getBasicProfile().getEmail()}
-                this.props.register(info)
-                }
-
-            )
+            })
         })
 
     }

@@ -7,14 +7,14 @@ import {Link} from "react-router-dom";
 class ShowBasket extends React.Component {
 
     componentDidMount() {
-        /*
-        if (this.props.userId){
-            try {this.props.register()}
+
+        if (this.props.isSignIn){
+            let info = {name: this.props.name, email: this.state.email}
+            try {this.props.register(info)}
             catch(error){
                 console.log("new user non record")
             }
         }
-        */
     }
     renderBookList = () =>{
         return this.props.basket.map(book => {
@@ -79,6 +79,8 @@ const mapStateToProps = (state) => {
     return {
         userId: state.auth.userId,
         isSignIn: state.auth.isSignIn,
+        name: state.auth.name,
+        email: state.auth.email,
         basket: state.basket
     }
 }

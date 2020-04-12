@@ -34,7 +34,7 @@ export const fetchStreams = () => async dispatch => {
 }
 
 
-export const test1 = () => async dispatch => {
+export const getRecommended = () => async dispatch => {
     const response = await db.get('/getRecommended');
     dispatch({
         type: 'GET_RECOMMENDED', payload: response.data

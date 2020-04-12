@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchStreams, deleteStream , test1} from '../../actions'
+import { fetchStreams, deleteStream , getRecommended} from '../../actions'
 import { Link } from 'react-router-dom'
 import Modal from '../Modal'
 import {isAdmin} from "../common";
@@ -9,8 +9,8 @@ import SearchForm from './SearchForm'
 
 class StreamList extends React.Component {
     componentDidMount() {
-        this.props.fetchStreams()
-        this.props.test1()
+        //this.props.fetchStreams()
+        this.props.getRecommended()
     }
     state = { renderModal: false, selectedStream: null }
 
@@ -24,10 +24,10 @@ class StreamList extends React.Component {
                     {this.renderAdmin(book)}
                     <i className="large middle aligned book icon" />
                     <div className="content">
-                        <Link to={`/streams/${book.id}`} className="header">
-                            {book.title}
+                        <Link to={`/streams/${book.book_id}`} className="header">
+                            {book.book_name}
                         </Link>
-                        <div className="description">{book.desc}</div>
+                        <div className="description">{"Author: "+ book.author_name}</div>
                         <div className="description">{"Price: " + book.price}</div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@ class StreamList extends React.Component {
         if (isAdmin(this.props.currentUserId)) {
             return (
                 <div className="right floated content">
-                    <Link to={`/streams/edit/${stream.id}`} className="ui button primary">Edit</Link>
+                    <Link to={`/streams/edit/${stream.book_id}`} className="ui button primary">Edit</Link>
                     <button
                         className="ui button negative" onClick={
                         () => {
@@ -83,7 +83,7 @@ class StreamList extends React.Component {
     renderModal = () => {
         if (this.state.renderModal === true) {
             if (this.state.selectedStream) {
-                const title = this.state.selectedStream.title
+                const title = this.state.selectedStream.book_name
                 return <Modal
                     onDismiss={this.restModal}
                     title="Delete Stream"
@@ -95,7 +95,7 @@ class StreamList extends React.Component {
     }
     deleteThis = () => {
         if (this.state.selectedStream) {
-            this.props.deleteStream(this.state.selectedStream.id)
+            this.props.deleteStream(this.state.selectedStream.book_id)
         }
     }
     renderAction = () => {
@@ -110,14 +110,6 @@ class StreamList extends React.Component {
         )
     }
     renderSearch = () => {
-        /*
-        return(
-            <div className="ui fluid icon input">
-                <input type="text" placeholder="Search a book..." />
-                <i className="search icon"></i>
-            </div>
-        )
-        */
         return (
             <SearchForm/>
         )
@@ -141,10 +133,10 @@ class StreamList extends React.Component {
 }
 const mapStateToProps = (state) => {
     return {
-        streams: Object.values(state.streams),
+        streams: state.books,
         currentUserId: state.auth.userId,
         isSignIn: state.auth.isSignIn
     }
 }
 
-export default connect(mapStateToProps, { fetchStreams, deleteStream, test1 })(StreamList)
+export default connect(mapStateToProps, { fetchStreams, deleteStream, getRecommended })(StreamList)

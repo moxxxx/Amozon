@@ -13,5 +13,5 @@ export default combineReducers({
     streams: streamReducer,
     user: userReducer,
     basket:basketReducer,
-    test:testReducer
+    books:testReducer
 })

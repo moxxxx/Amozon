@@ -1,4 +1,4 @@
-export default (state = null, action) => {
+export default (state = [], action) => {
     if (action.type === 'GET_RECOMMENDED') {
         return  action.payload
     }

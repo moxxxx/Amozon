@@ -1,6 +1,6 @@
-export default (state = [], action) => {
+export default (state = null, action) => {
     if (action.type === 'GET_RECOMMENDED') {
-        return [ ...state,  action.payload ]
+        return  action.payload
     }
 
     return state

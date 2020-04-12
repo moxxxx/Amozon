@@ -16,7 +16,9 @@ class SearchForm extends React.Component {
 
     handleSubmit(event) {
         alert('A name was submitted: ' + this.state.value);
-        this.props.searchByName()
+        var keywords = this.state.value
+        keywords = keywords.replace(/\s/g, "_");
+        this.props.searchByName(keywords)
         event.preventDefault();
     }
 

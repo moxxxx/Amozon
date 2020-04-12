@@ -22,9 +22,15 @@ class StreamShow extends React.Component {
             console.log(book)
             return (
                 <div>
-                    <h1>{book.title}</h1>
-                    <h5>{book.desc}</h5>
-                    <h5>{book.price}</h5>
+                    <h1>{book.book_name}</h1>
+                    <h5>{"by: "+ book.author_name}</h5>
+                    <h5>{"price : " + book.price}</h5>
+                    <h5>{"royalty_rate: " + book.royalty_rate}</h5>
+                    <h5>{"ISBN: " + book.isbn}</h5>
+                    <h5>{"num of pages: " + book.num_page}</h5>
+                    <h5>{"ISBN: " + book.isbn}</h5>
+                    <h5>{"inventory: " + book.inventory}</h5>
+                    <h5>{"genre_name: " + book.genre_name}</h5>
                     <button onClick={() => { this.addTo()}} className="ui button">Add to Basket</button>
                 </div>
             )
@@ -33,7 +39,7 @@ class StreamShow extends React.Component {
 }
 const mapStateToProps = (state, ownProps) => {
     return {
-        stream: state.streams[ownProps.match.params.id]
+        stream: state.streams[ownProps.match.params.book_id]
     }
 }
 export default connect(mapStateToProps, { fetchStream , addToBasket})(StreamShow)

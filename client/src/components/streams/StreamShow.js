@@ -45,7 +45,7 @@ const mapStateToProps = (state, ownProps) => {
 const findBook = (books, id) =>{
     console.log("book is is :" + id)
     for ( const book of books){
-        if (books.book_id === id){
+        if (book.book_id === id){
             return book
         }
     }

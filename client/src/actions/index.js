@@ -65,6 +65,13 @@ export const addToBasket = (book) => {
     }
 }
 
+export const searchByName = (keywords)=> async dispatch =>{
+    const responce = await streams.get(`/search/${keywords}`)
+    dispatch({
+        type: 'SEARCH_BY_NAME', payload: responce.data
+    })
+}
+
 export const emptyBasket = () =>{
     return{
         type: 'EMPTY_BASKET'

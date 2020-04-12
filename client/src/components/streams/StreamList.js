@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchStreams, deleteStream , getRecommended} from '../../actions'
+import {  deleteStream , getRecommended} from '../../actions'
 import { Link } from 'react-router-dom'
 import Modal from '../Modal'
 import {isAdmin} from "../common";
@@ -9,7 +9,6 @@ import SearchForm from './SearchForm'
 
 class StreamList extends React.Component {
     componentDidMount() {
-        //this.props.fetchStreams()
         this.props.getRecommended()
     }
     state = { renderModal: false, selectedStream: null }
@@ -139,4 +138,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { fetchStreams, deleteStream, getRecommended })(StreamList)
+export default connect(mapStateToProps, { deleteStream, getRecommended })(StreamList)

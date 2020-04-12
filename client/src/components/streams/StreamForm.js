@@ -38,11 +38,19 @@ class StreamForm extends React.Component {
             <form
                 className="ui form error"
                 onSubmit={this.props.handleSubmit(this.onSubmit)}>
-                <Field name="title" component={this.renderInput} label="Enter Title" />
+                <Field name="book_name" component={this.renderInput} label="Enter Title" />
                 <Field name="inventory" component={this.renderInput} label="Enter inventory" />
                 <Field name="public_name" component={this.renderInput} label="Enter Price" />
                 <Field name="num_page" component={this.renderInput} label="Enter number of page" />
-                <Field name="author" component={this.renderInput} label="Enter author" />
+                <Field name="author_name" component={this.renderInput} label="Enter author" />
+                <Field name="genre_name" component={this.renderInput} label="Enter genre name" />
+                <Field name="royalty_rate" component={this.renderInput} label="Enter royalty rate" />
+                <Field name="pub_date" component={this.renderInput} label="Enter published date   ('3/12/1994', ‘4/29/2020’) " />
+                <Field name="pub_id" component={this.renderInput} label="Enter pub_id (1~5)" />
+                <Field name="price" component={this.renderInput} label="Enter price" />
+                <Field name="isbn" component={this.renderInput} label="Enter price" />
+                <Field name="num_page" component={this.renderInput} label="Enter pages" />
+                <Field name="on_shelf" component={this.renderInput} label="Enter shelf" />
                 <button className="ui button primary">Submit</button>
             </form >
         )
@@ -50,14 +58,26 @@ class StreamForm extends React.Component {
 }
 const validate = formValues => {
     const errors = {}
-    if (!formValues.title) {
+    if (!formValues.book_name) {
         // user no entering title
         // console.log('no title')
-        errors.title = "you must enter a title"
+        errors.book_name = "you must enter a title"
     }
-    if (!formValues.desc) {
+    if (!formValues.inventory) {
         // console.log('no desc')
-        errors.desc = "you must enter a description"
+        errors.inventory = "you must enter a description"
+    }
+    if (!formValues.public_name) {
+        // console.log('no desc')
+        errors.public_name = "you must enter a description"
+    }
+    if (!formValues.num_page) {
+        // console.log('no desc')
+        errors.num_page = "you must enter a description"
+    }
+    if (!formValues.author_name) {
+        // console.log('no desc')
+        errors.author_name = "you must enter a description"
     }
     return errors // empty object meaning is valid
 }

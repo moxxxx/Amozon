@@ -7,6 +7,7 @@ import StreamShow from './streams/StreamShow'
 import StreamList from './streams/StreamList'
 import ShowBasket from './streams/ShowBasket'
 import Checkout from './streams/Checkout'
+import UserCenter from './streams/UserCenter'
 import Header from './Header'
 import history from '../history'
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
                         <Route path="/streams/:id" exact component={StreamShow} />
                         <Route path="/basket" exact component={ShowBasket} />
                         <Route path="/checkout" exact component={Checkout} />
+                        <Route path="/user_center" exact component={UserCenter} />
                     </Switch>
                 </div>
             </Router>

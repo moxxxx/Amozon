@@ -94,6 +94,17 @@ export const editStream = (id, formValues) => async dispatch => {
     history.push('/')
 }
 
+export const createBook = formValues => async (dispatch) => {
+    const responce = await db.post('/create_book', { ...formValues })
+    dispatch({
+        type: 'CREATE_BOOK',
+        payload: responce.data
+    })
+    // programmatic navigation
+    history.push('/')
+}
+
+
 export const deleteStream = (id) => async dispatch => {
     await streams.delete(`Books/${id}`)
     dispatch({

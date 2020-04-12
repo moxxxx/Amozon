@@ -11,13 +11,8 @@ class MyBasket extends React.Component {
         }
         else{
             return (
-                <Link to="/basket" className="item ">
-                    <div className="ui vertical animated button" tabIndex="0">
-                        <div className="hidden content">{this.props.content}</div>
-                        <div className="visible content">
-                            <i className="shop icon"></i>
-                        </div>
-                    </div>
+                <Link to="/user_center" className="item ">
+                    <i className="user icon"></i>
                 </Link>
             )
         }

@@ -9,7 +9,7 @@ class ShowBasket extends React.Component {
     componentDidMount() {
 
         if (this.props.isSignIn){
-            let info = {name: this.props.name, email: this.state.email}
+            let info = {name: this.props.name, email: this.props.email}
             try {this.props.register(info)}
             catch(error){
                 console.log("new user non record")

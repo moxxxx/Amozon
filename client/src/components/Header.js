@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import GoogleAuth from './GoogleAuth'
 import logo from './logo.bmp'
 import MyBasket from './MyBasket'
+import User from './User'
 const Header = () => {
     return (
         <div className="ui secondary pointing menu">
@@ -12,7 +13,10 @@ const Header = () => {
             <div className="right menu">
                 <div>
                     <GoogleAuth />
-                    <MyBasket content={'My Basket'}/>
+                    <div className="ui secondary pointing menu">
+                        <MyBasket content={'shop'}/>
+                        <User />
+                    </div>
                 </div>
             </div>
         </div>

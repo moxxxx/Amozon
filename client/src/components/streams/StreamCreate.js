@@ -12,7 +12,16 @@ class StreamCreate extends React.Component {
         return (
             <div>
                 <h3>Add a book</h3>
-                <StreamForm onSubmit={this.onSubmit} />
+                <StreamForm onSubmit={this.onSubmit} initialValues={{
+                    price: '10.9',
+                    book_name: 'Lily',
+                    author_name: 'jojo',
+                    pub_date : '4/29/2020',
+                    royalty_rate: '0.3',
+                    inventory: '100',
+                    num_page:'100',
+                    on_shelf:'1'
+                }} />
             </div>
         )
     }

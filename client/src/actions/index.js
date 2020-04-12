@@ -104,6 +104,15 @@ export const createBook = formValues => async (dispatch) => {
     history.push('/')
 }
 
+export const deleteBook = (id) => async dispatch => {
+    await db.delete(`delete_book/${id}`)
+    dispatch({
+        type: 'DELETE_BOOK',
+        payload: id
+    })
+}
+
+
 
 export const deleteStream = (id) => async dispatch => {
     await streams.delete(`Books/${id}`)

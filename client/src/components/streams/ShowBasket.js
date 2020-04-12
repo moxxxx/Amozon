@@ -7,12 +7,14 @@ import {Link} from "react-router-dom";
 class ShowBasket extends React.Component {
 
     componentDidMount() {
+        /*
         if (this.props.userId){
-            try {this.props.register(null)}
+            try {this.props.register()}
             catch(error){
                 console.log("new user non record")
             }
         }
+        */
     }
     renderBookList = () =>{
         return this.props.basket.map(book => {

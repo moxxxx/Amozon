@@ -80,7 +80,7 @@ export const emptyBasket = () =>{
 
 
 export const register = (info) => {
-    db.post('/Books', { "Hello": "World" })
+    db.post('/register', { "name": info.name, "email":info.email })
 
 }
 

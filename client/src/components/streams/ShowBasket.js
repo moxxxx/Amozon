@@ -11,7 +11,6 @@ class ShowBasket extends React.Component {
             try {this.props.fetchUser(this.props.userId)}
             catch(error){
                 console.log("new user non record")
-                this.isNewuser = true
             }
         }
     }
@@ -48,8 +47,7 @@ class ShowBasket extends React.Component {
         var total = 0.0
         let books = this.props.basket
         for (let book of books){
-            console.log(typeof book.price)
-            total += parseFloat(book.price)
+            total += parseFloat(book.price.substring(1,book.price.length))
         }
         return total
 

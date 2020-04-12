@@ -12,13 +12,13 @@ class StreamShow extends React.Component {
 
     }
     render() {
-        if (!this.props.stream) {
+        if (!this.props.book) {
             return (
                 <div>Loading...</div>
             )
         }
         else {
-            const book = this.props.stream
+            const book = this.props.book
             console.log(book)
             return (
                 <div>
@@ -39,7 +39,16 @@ class StreamShow extends React.Component {
 }
 const mapStateToProps = (state, ownProps) => {
     return {
-        stream: state.books[ownProps.match.params.book_id]
+        book: findBook(state.books, ownProps.match.params.book_id)
     }
+}
+
+const findBook = (books, id) =>{
+    for (let book of books){
+        if (books.book_id === id){
+            return book
+        }
+    }
+    return null
 }
 export default connect(mapStateToProps, { fetchStream , addToBasket})(StreamShow)

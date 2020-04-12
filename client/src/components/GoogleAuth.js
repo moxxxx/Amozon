@@ -22,7 +22,7 @@ class GoogleAuth extends React.Component {
         if (isSignedIn) {
             //console.log(this.auth)
             //refer to :   https://developers.google.com/identity/sign-in/web/reference
-            let userInfo = {id: this.auth.currentUser.get().getId(), name: this.auth.currentUser.get().getBasicProfile().getGivenName()}
+            let userInfo = {id: this.auth.currentUser.get().getId(), name: this.auth.currentUser.get().getBasicProfile().getGivenName(), email: this.auth.currentUser.get().getBasicProfile().getEmail()}
             this.props.signIn(userInfo)
             //then query from pour database?
 

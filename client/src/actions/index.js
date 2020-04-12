@@ -17,7 +17,7 @@ export const signOut = () => {
 
 export const createStream = formValues => async (dispatch, getState) => {
     const { userId } = getState().auth
-    const responce = await streams.post('/Books', { ...formValues })
+    const responce = await streams.post('/Books', { ...formValues , userId})
     dispatch({
         type: 'CREATE_STREAM',
         payload: responce.data
@@ -66,7 +66,7 @@ export const addToBasket = (book) => {
 }
 
 export const searchByName = (keywords)=> async dispatch =>{
-    const responce = await streams.get(`/search/${keywords}`)
+    const responce = await db.get(`/search/${keywords}`)
     dispatch({
         type: 'SEARCH_BY_NAME', payload: responce.data
     })
@@ -77,6 +77,14 @@ export const emptyBasket = () =>{
         type: 'EMPTY_BASKET'
     }
 }
+
+
+export const register = async ( getState) => {
+    const {  } = getState().auth
+    db.post('/Books', { "Hello": "World" })
+
+}
+
 
 export const editStream = (id, formValues) => async dispatch => {
     const response = await streams.patch(`/Books/${id}`, formValues)

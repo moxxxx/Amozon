@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchUser } from '../../actions'
+import {  register } from '../../actions'
 import {Link} from "react-router-dom";
 
 
@@ -8,7 +8,7 @@ class ShowBasket extends React.Component {
 
     componentDidMount() {
         if (this.props.userId){
-            try {this.props.fetchUser(this.props.userId)}
+            try {this.props.register()}
             catch(error){
                 console.log("new user non record")
             }
@@ -80,4 +80,4 @@ const mapStateToProps = (state) => {
         basket: state.basket
     }
 }
-export default connect(mapStateToProps, { fetchUser})(ShowBasket)
+export default connect(mapStateToProps, { register})(ShowBasket)

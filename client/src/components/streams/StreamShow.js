@@ -20,7 +20,6 @@ class StreamShow extends React.Component {
         }
         else {
             const book = this.props.book
-            console.log(book)
             return (
                 <div>
                     <h1>{book.book_name}</h1>
@@ -44,7 +43,8 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const findBook = (books, id) =>{
-    for (let book of books){
+    console.log("book is is :" + id)
+    for ( const book of books){
         if (books.book_id === id){
             return book
         }

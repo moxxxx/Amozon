@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4d3b51b-f146-4683-ab63-968fae15a5d5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/streams/StreamCreate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/streams/StreamCreate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/streams/StreamForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/streams/StreamForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/testReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/testReducer.js" afterDir="false" />
-    </list>
+    <list default="true" id="d4d3b51b-f146-4683-ab63-968fae15a5d5" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -346,12 +341,12 @@
       <option name="presentableId" value="Default" />
       <updated>1586294396455</updated>
       <workItem from="1586294397602" duration="9999000" />
-      <workItem from="1586572230822" duration="23750000" />
+      <workItem from="1586572230822" duration="23959000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33749000" />
+    <option name="totallyTimeSpent" value="33958000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="945" extended-state="0" />

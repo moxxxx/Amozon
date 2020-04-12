@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {  deleteStream , getRecommended} from '../../actions'
+import {  deleteBook , getRecommended} from '../../actions'
 import { Link } from 'react-router-dom'
 import Modal from '../Modal'
 import {isAdmin} from "../common";
@@ -94,7 +94,7 @@ class StreamList extends React.Component {
     }
     deleteThis = () => {
         if (this.state.selectedStream) {
-            this.props.deleteStream(this.state.selectedStream.book_id)
+            this.props.deleteBook(this.state.selectedStream.book_id)
         }
     }
     renderAction = () => {
@@ -138,4 +138,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { deleteStream, getRecommended })(StreamList)
+export default connect(mapStateToProps, { deleteBook, getRecommended })(StreamList)

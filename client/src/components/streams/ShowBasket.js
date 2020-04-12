@@ -20,8 +20,8 @@ class ShowBasket extends React.Component {
                 <div className="item" key={book.id}>
                     <i className="large middle aligned book icon" />
                     <div className="content">
-                        <Link to={`/streams/${book.id}`} className="header">
-                            {book.title}
+                        <Link to={`/streams/${book.book_id}`} className="header">
+                            {book.book_name}
                         </Link>
                         <div className="description">{"Price: " + book.price}</div>
                     </div>

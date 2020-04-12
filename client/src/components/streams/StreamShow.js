@@ -39,7 +39,7 @@ class StreamShow extends React.Component {
 }
 const mapStateToProps = (state, ownProps) => {
     return {
-        stream: state.streams[ownProps.match.params.book_id]
+        stream: state.books[ownProps.match.params.book_id]
     }
 }
 export default connect(mapStateToProps, { fetchStream , addToBasket})(StreamShow)

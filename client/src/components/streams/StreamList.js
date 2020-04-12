@@ -20,7 +20,7 @@ class StreamList extends React.Component {
     renderList() {
         return this.props.streams.map(book => {
             return (
-                <div className="item" key={book.id}>
+                <div className="item" key={book.book_id}>
                     {this.renderAdmin(book)}
                     <i className="large middle aligned book icon" />
                     <div className="content">

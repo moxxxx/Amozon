@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { fetchStream, editStream } from '../../actions'
 import StreamForm from './StreamForm'
 import pick from 'lodash/pick'
+import {isAdmin} from "../common";
 
 class StreamEdit extends React.Component {
     componentDidMount() {
@@ -16,10 +17,10 @@ class StreamEdit extends React.Component {
     render() {
         if (!this.props.stream) {
             return (<div>loading</div>)
-        } else if (this.props.userId === this.props.stream.userId) {
+        } else if (isAdmin(this.props.userId)) {
             return (<div>
-                <h3>eidt</h3>
-                <StreamForm initialValues={pick(this.props.stream, 'title', 'desc')} onSubmit={this.onSubmit} />
+                <h3>edit</h3>
+                <StreamForm initialValues={pick(this.props.stream, 'title', 'desc', 'price')} onSubmit={this.onSubmit} />
             </div>)
         } else if (!this.props.userId) {
             return (<div>you have to login to edit!</div>)

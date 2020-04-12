@@ -1,6 +1,6 @@
 import streams from '../api/streams'
 import history from '../history'
-import testMe from '../api/testMe'
+import db from '../api/db'
 
 export const signIn = (userinfo) => {
     return {
@@ -17,7 +17,7 @@ export const signOut = () => {
 
 export const createStream = formValues => async (dispatch, getState) => {
     const { userId } = getState().auth
-    const responce = await streams.post('/Books', { ...formValues, userId })
+    const responce = await streams.post('/Books', { ...formValues })
     dispatch({
         type: 'CREATE_STREAM',
         payload: responce.data
@@ -33,20 +33,14 @@ export const fetchStreams = () => async dispatch => {
     })
 }
 
-/*
+
 export const test1 = () => async dispatch => {
-    const response = await testMe.get('/todos');
+    const response = await db.get('/getRecommended');
     dispatch({
-        type: 'TEST', payload: response.data
+        type: 'GET_RECOMMENDED', payload: response.data
     })
 }
-*/
-export const test1 = () => async dispatch => {
-    const response = await testMe.post('/todos');
-    dispatch({
-        type: 'TEST', payload: response.data
-    })
-}
+
 
 
 export const fetchStream = (id) => async dispatch => {

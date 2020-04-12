@@ -3,12 +3,18 @@ import { connect } from 'react-redux'
 import { fetchStreams, deleteStream , test1} from '../../actions'
 import { Link } from 'react-router-dom'
 import Modal from '../Modal'
+import {isAdmin} from "../common";
+import SearchForm from './SearchForm'
+
+
 class StreamList extends React.Component {
     componentDidMount() {
         this.props.fetchStreams()
         this.props.test1()
     }
     state = { renderModal: false, selectedStream: null }
+
+
 
 
     renderList() {
@@ -30,7 +36,7 @@ class StreamList extends React.Component {
     }
 
     renderAdmin(stream) {
-        if (stream.userId === this.props.currentUserId) {
+        if (isAdmin(this.props.currentUserId)) {
             return (
                 <div className="right floated content">
                     <Link to={`/streams/edit/${stream.id}`} className="ui button primary">Edit</Link>
@@ -60,7 +66,7 @@ class StreamList extends React.Component {
     }
     renderCreate() {
         // console.log(this.props.isSignin)
-        if (this.props.isSignIn) {
+        if (this.props.isSignIn && isAdmin(this.props.currentUserId)) {
             return (
                 <div>
                     <Link to="/streams/new" className="ui button primary">
@@ -104,15 +110,20 @@ class StreamList extends React.Component {
         )
     }
     renderSearch = () => {
+        /*
         return(
             <div className="ui fluid icon input">
                 <input type="text" placeholder="Search a book..." />
                 <i className="search icon"></i>
             </div>
         )
-
-
+        */
+        return (
+            <SearchForm/>
+        )
     }
+
+
 
     render() {
         return (

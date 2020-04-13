@@ -6,6 +6,7 @@ import basketReducer from './basketReducer'
 import streamReducer from './streamReducer'
 import userReducer from './userReducer'
 import testReducer from './testReducer'
+import reportReducer from './reportReducer'
 
 export default combineReducers({
     auth: authReducers,
@@ -13,5 +14,6 @@ export default combineReducers({
     streams: streamReducer,
     user: userReducer,
     basket:basketReducer,
-    books:testReducer
+    books:testReducer,
+    reports: reportReducer
 })

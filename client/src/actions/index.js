@@ -128,6 +128,13 @@ export const checkOrder = (orderNum) => async dispatch => {
     })
 }
 
+export const renderReport = () => async dispatch => {
+    const response = await db.get(`/renderReport`)
+    dispatch({
+        type: 'RENDER_REPORT', payload: response.data
+    })
+}
+
 
 export const deleteStream = (id) => async dispatch => {
     await streams.delete(`Books/${id}`)

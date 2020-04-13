@@ -25,11 +25,9 @@ CORS(app)
 api = Api(app)
 
 
-# get 10 本推荐 /getRecommended
-# creat book: inventory, book_name, author_name, genre_name, book_name, royalty_rate, price, isbn, num_page, on_shelf
 
 
-# get 10 本推荐 /getRecommended
+# get 10 Recommended
 class Recommended(Resource):
     def get(self):
         cursor = connectSQL()  # connect to database
@@ -100,22 +98,21 @@ class Books(Resource):
 
 
 
-# get the sales amount of a book last month
-# TODO
 class Search_by_keyword(Resource):
     def get(self, keyword):
         cursor = connectSQL()  # connect to database
         word_list = keyword.split("_")
-        # out = []
-        # for i in range(len(word_list)):
-        query = "select book_id, inventory, book_name, author_name,genre_name, royalty_rate,price,isbn,num_page, on_shelf from book natural join author natural join genre " \
-                "where book_name ~ '{}' or author_name ~ '{}' or genre_name ~ '{}'".format(word_list[0], word_list[0], word_list[0])
-        cursor.execute(query)
-        r = [dict((cursor.description[i][0], value) for i, value in enumerate(row)) for row in cursor.fetchall()]
-            # out += r
-        # print(out)
+        out = []
+        for i in range(len(word_list)):
+            query = "select book_id, inventory, book_name, author_name,genre_name, royalty_rate,price,isbn,num_page, on_shelf from book natural join author natural join genre " \
+                    "where book_name ~ '{}' or author_name ~ '{}' or genre_name ~ '{}'".format(word_list[i], word_list[i], word_list[i])
+            cursor.execute(query)
+            r = [dict((cursor.description[i][0], value) for i, value in enumerate(row)) for row in cursor.fetchall()]
+            out += r
+        # out = list(set(out))
+        good = [dict(t) for t in {tuple(d.items()) for d in out}]
         cursor.connection.close()
-        return r
+        return good
 
 
 
@@ -162,6 +159,7 @@ class Creat_Order(Resource):
             cus_id, ship_address, recipient, credit_card, order_phone)
         cursor.execute(query)
         order_id = cursor.fetchone()[0]
+        print(order_id)
         for key in request.json.keys():
             if not key in ["cus_email", "ship_address", "credit_card","recipients", "phone"]:
                 book_id = int(key)
@@ -173,7 +171,7 @@ class Creat_Order(Resource):
                 cursor.connection.commit()
                 cursor.execute("update book set inventory = inventory-{} where book_id = {}".format(amount, book_id))
                 cursor.connection.commit()
-                cursor.exectue("select inventory from book where book_id={}".format(book_id))
+                cursor.execute("select inventory from book where book_id={}".format(book_id))
                 r = dict((cursor.description[i][0], value) for i, value in enumerate(cursor.fetchall()[0]))
                 # a flag to determine whether or not to send the email to the publisher
                 send_email_flag = r["inventory"] < 10

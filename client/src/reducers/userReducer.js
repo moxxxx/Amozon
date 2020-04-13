@@ -5,6 +5,8 @@ export default (state = INTIAL_STATE, action) => {
         return action.payload
     }else if (action.type === 'REGISTER'){
         return action.payload
+    }else if (action.type === 'SEND_ORDER'){
+        return [action]
     }
     return state
 }

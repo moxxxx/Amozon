@@ -31,10 +31,11 @@ class PaymentForm extends React.Component {
             <form
                 className="ui form error"
                 onSubmit={this.props.handleSubmit(this.onSubmit)}>
-                <Field name="title" component={this.renderInput} label="Name" />
-                <Field name="desc" component={this.renderInput} label="Phone Number" />
-                <Field name="price" component={this.renderInput} label="Address" />
-                <Field name="price" component={this.renderInput} label="Card Number" />
+                <Field name="cus_email" component={this.renderInput} label="email" />
+                <Field name="recipients" component={this.renderInput} label="recipients" />
+                <Field name="ship_address" component={this.renderInput} label="Address" />
+                <Field name="credit_card" component={this.renderInput} label="Credit Card Number" />
+                <Field name="phone" component={this.renderInput} label="Phone Number" />
                 <button className="ui button primary">Pay</button>
             </form >
         )
@@ -42,14 +43,14 @@ class PaymentForm extends React.Component {
 }
 const validate = formValues => {
     const errors = {}
-    if (!formValues.title) {
+    if (!formValues.credit_card) {
         // user no entering title
         // console.log('no title')
-        errors.title = "you must enter a title"
+        errors.credit_card = "you must enter a credict card number"
     }
-    if (!formValues.desc) {
+    if (!formValues.ship_address) {
         // console.log('no desc')
-        errors.desc = "you must enter a description"
+        errors.ship_address = "you must enter a shipping address"
     }
     return errors // empty object meaning is valid
 }

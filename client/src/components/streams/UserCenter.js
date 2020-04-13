@@ -7,11 +7,22 @@ class UserCenter extends React.Component {
     componentDidMount() {
     }
 
+    renderOrder = () =>{
+        if (this.props.lastOrder){
+            return(
+                <div>
+                <h5>Your last order number is</h5>
+                <h5>{this.props.lastOrder}</h5>
+                </div>
+            )
+        }
+    }
     render() {
         if (this.props.isSignIn){
             return (
                 <div>
                     User center
+                    {this.renderOrder()}
                 </div>
             )
         }else{
@@ -29,7 +40,8 @@ const mapStateToProps = (state) => {
         userId: state.auth.userId,
         isSignIn: state.auth.isSignIn,
         name: state.auth.name,
-        email: state.auth.email
+        email: state.auth.email,
+        lastOrder: state.auth.lastOrder
     }
 }
 export default connect(mapStateToProps, { })(UserCenter)

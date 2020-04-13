@@ -112,6 +112,15 @@ export const deleteBook = (id) => async dispatch => {
     })
 }
 
+export const sendOrder = (value) => async (dispatch) => {
+    const response = await db.post('/create_order', { ...value })
+    dispatch({
+        type: 'SEND_ORDER',
+        payload: response.data
+    })
+    history.push('/user_center')
+}
+
 
 
 export const deleteStream = (id) => async dispatch => {

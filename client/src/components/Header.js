@@ -6,6 +6,7 @@ import MyBasket from './MyBasket'
 import User from './User'
 const Header = () => {
     return (
+        <div style={{'padding-bottom': '30px'}}>
         <div className="ui secondary pointing menu">
             <Link to="/" className="item ">
                 <img src={logo} style={{width:'180px'}} />
@@ -19,6 +20,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }

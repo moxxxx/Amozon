@@ -37,7 +37,7 @@ class UserCenter extends React.Component {
         if (this.props.totalReport){
             let report =  this.props.totalReport
             return(
-                <div>
+                <div  style={{'padding-bottom': '40px'}}>
 
                     <h4 className="ui horizontal divider header">
                         <i className="bar chart icon"></i>
@@ -79,7 +79,7 @@ class UserCenter extends React.Component {
         if (this.props.genreReport){// loaded genre report
             let genre = this.props.genreReport
             return(
-                <div>
+                <div style={{'padding-bottom': '40px'}}>
                     <h4 className="ui horizontal divider header">
                         <i className="bar chart icon"></i>
                         Genre
@@ -113,10 +113,10 @@ class UserCenter extends React.Component {
         if (this.props.authorReport){// loaded genre report
             let author = this.props.authorReport
             return(
-                <div>
+                <div style={{'padding-bottom': '40px'}}>
                     <h4 className="ui horizontal divider header">
                         <i className="bar chart icon"></i>
-                        Genre
+                        Author
                     </h4>
 
                     <table className="ui definition table">

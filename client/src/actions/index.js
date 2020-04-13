@@ -122,7 +122,7 @@ export const sendOrder = (value) => async (dispatch) => {
 }
 
 export const checkOrder = (orderNum) => async dispatch => {
-    const response = await streams.get(`/check_order/${orderNum}`)
+    const response = await db.get(`/check_order/${orderNum}`)
     dispatch({
         type: 'CHECK_ORDER', payload: response.data
     })

@@ -143,6 +143,15 @@ export const renderGenreReport = (value) => async dispatch => {
 }
 
 
+export const getAuthorReport = (value) => async dispatch => {
+    const response = await db.get(`/getAuthor/${value}`)
+    dispatch({
+        type: 'RENDER_AUTHOR_REPORT', payload: response.data
+    })
+}
+
+
+
 export const deleteStream = (id) => async dispatch => {
     await streams.delete(`Books/${id}`)
     dispatch({

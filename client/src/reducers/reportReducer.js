@@ -9,6 +9,8 @@ export default (state = INTIAL_STATE, action) => {
             return { ...state, totalReport: action.payload }
         case 'RENDER_GENRE_REPORT':
             return {...state, genreReport : action.payload}
+        case 'RENDER_AUTHOR_REPORT':
+            return {...state, authorReport: action.payload}
         default:
             return state
     }

@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import  {isAdmin} from '../common'
 import SearchOrderForm from './SearchOrderForm'
-import {renderReport, renderGenreReport} from '../../actions'
+import {renderReport, renderGenreReport, getAuthorReport} from '../../actions'
 import SearchForm from './SearchForm'
 
 class UserCenter extends React.Component {
@@ -38,11 +38,32 @@ class UserCenter extends React.Component {
             let report =  this.props.totalReport
             return(
                 <div>
-                    <h5>Here is the report: </h5>
-                    <div>Total Sale : {report.total_sale}</div>
-                    <div>Total Expenditure : {report.total_expenditure}</div>
-                    <div>Last Month Sales : {report.sales_last_month}</div>
-                    <div>Last Month Expenditure : {report.expenditure_last_month}</div>
+
+                    <h4 className="ui horizontal divider header">
+                        <i className="bar chart icon"></i>
+                        Report
+                    </h4>
+
+                    <table className="ui definition table">
+                        <tbody>
+                        <tr>
+                            <td className="two wide column">Total Sale      </td>
+                            <td>{report.total_sale}</td>
+                        </tr>
+                        <tr>
+                            <td>Total Expenditure</td>
+                            <td>{report.total_expenditure}</td>
+                        </tr>
+                        <tr>
+                            <td>Last Month Sales</td>
+                            <td>{report.sales_last_month}</td>
+                        </tr>
+                        <tr>
+                            <td>Last Month Expenditure</td>
+                            <td>{report.expenditure_last_month}</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             )
         }
@@ -61,13 +82,13 @@ class UserCenter extends React.Component {
                 <div>
                     <h4 className="ui horizontal divider header">
                         <i className="bar chart icon"></i>
-                        Specifications
+                        Genre
                     </h4>
 
                     <table className="ui definition table">
                         <tbody>
                         <tr>
-                            <td className="two wide column">Total amount</td>
+                            <td className="two wide column">Total amount         </td>
                             <td>{genre.genre_amount}</td>
                         </tr>
                         <tr>
@@ -89,9 +110,45 @@ class UserCenter extends React.Component {
         }
     }
     getAuthorReport = () => {
+        if (this.props.authorReport){// loaded genre report
+            let author = this.props.authorReport
+            return(
+                <div>
+                    <h4 className="ui horizontal divider header">
+                        <i className="bar chart icon"></i>
+                        Genre
+                    </h4>
+
+                    <table className="ui definition table">
+                        <tbody>
+                        <tr>
+                            <td className="two wide column">Total amount         </td>
+                            <td>{author.author_amount}</td>
+                        </tr>
+                        <tr>
+                            <td>Total Sales</td>
+                            <td>{author.author_sales}</td>
+                        </tr>
+                        <tr>
+                            <td>Amount Last Month</td>
+                            <td>{author.author_last_amount}</td>
+                        </tr>
+                        <tr>
+                            <td>Sales last Month</td>
+                            <td>{author.author_last_sales}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            )
+        }
 
     }
 
+    handleAuthorSubmit = (value) => {
+        let modvalue = value.replace(/\s/g, "_");
+        this.props.getAuthorReport(modvalue)
+    }
 
     renderAdminPage = () =>{
         return(
@@ -100,6 +157,8 @@ class UserCenter extends React.Component {
                 {this.renderTotalReport()}
                 <SearchForm placeholder="enter Genre(Novel/Poetry...)" submit = {this.handleGenreSubmit}/>
                 {this.getGenreReport()}
+
+                <SearchForm placeholder="enter Author Name" submit = {this.handleAuthorSubmit}/>
                 {this.getAuthorReport()}
             </div>
         )
@@ -141,7 +200,8 @@ const mapStateToProps = (state) => {
         lastOrder: state.auth.last_order,
         orderDetail: state.auth.orderDetail,
         totalReport: state.reports.totalReport,
-        genreReport: state.reports.genreReport
+        genreReport: state.reports.genreReport,
+        authorReport: state.reports.authorReport
     }
 }
-export default connect(mapStateToProps, {renderReport, renderGenreReport })(UserCenter)
+export default connect(mapStateToProps, {renderReport, renderGenreReport, getAuthorReport })(UserCenter)

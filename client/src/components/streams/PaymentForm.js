@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form'
 
 class PaymentForm extends React.Component {
     renderInput = ({ label, input, meta }) => {
-        console.log(meta)
+        //console.log(meta)
         return (
             <div className='field'>
                 <label>{label}</label>

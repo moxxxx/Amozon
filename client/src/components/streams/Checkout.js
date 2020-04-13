@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { emptyBasket, sendOrder } from '../../actions'
 import PaymentForm from './PaymentForm'
 import {sumUpBooks} from '../common'
-import {assign} from 'lodash'
 
 class Checkout extends React.Component {
     onSubmit = (formValues) => {

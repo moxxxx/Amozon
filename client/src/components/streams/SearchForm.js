@@ -1,6 +1,5 @@
 import React from 'react'
-//import {searchByName} from '../../actions'
-//import { connect } from 'react-redux'
+
 
 class SearchForm extends React.Component {
     constructor(props) {
@@ -16,8 +15,6 @@ class SearchForm extends React.Component {
 
     handleSubmit(event) {
         var keywords = this.state.value
-        keywords = keywords.replace(/\s/g, "_");
-        //this.props.searchByName(keywords)
         this.props.submit(keywords)
         event.preventDefault();
     }

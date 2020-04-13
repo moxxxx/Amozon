@@ -2,7 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import  {isAdmin} from '../common'
 import SearchOrderForm from './SearchOrderForm'
-import {renderReport} from '../../actions'
+import {renderReport, renderGenreReport} from '../../actions'
+import SearchForm from './SearchForm'
 
 class UserCenter extends React.Component {
 
@@ -48,11 +49,37 @@ class UserCenter extends React.Component {
 
     }
 
+    handleGenreSubmit = (value) => {
+        let modValue = value.trim()
+        this.props.renderGenreReport(modValue)
+    }
+
+    getGenreReport = () => {
+        if (this.props.genreReport){// loaded genre report
+            let genre = this.props.genreReport
+            return(
+                <div>
+                    <div>Total amount : {genre.genre_amount}</div>
+                    <div>Total Sales  : {genre.genre_sales}</div>
+                    <div>Amount Last Month : {genre.genre_last_amount}</div>
+                    <div>Sales last Month : {genre.genre_last_sales}</div>
+                </div>
+            )
+        }
+    }
+    getAuthorReport = () => {
+
+    }
+
+
     renderAdminPage = () =>{
         return(
             <div>
                 <h1>Admin Center</h1>
                 {this.renderTotalReport()}
+                <SearchForm placeholder="enter Genre(Novel/Poetry...)" submit = {this.handleGenreSubmit}/>
+                {this.getGenreReport()}
+                {this.getAuthorReport()}
             </div>
         )
     }
@@ -92,7 +119,8 @@ const mapStateToProps = (state) => {
         email: state.auth.email,
         lastOrder: state.auth.last_order,
         orderDetail: state.auth.orderDetail,
-        totalReport: state.reports.totalReport
+        totalReport: state.reports.totalReport,
+        genreReport: state.reports.genreReport
     }
 }
-export default connect(mapStateToProps, {renderReport })(UserCenter)
+export default connect(mapStateToProps, {renderReport, renderGenreReport })(UserCenter)

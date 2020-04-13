@@ -110,7 +110,8 @@ class StreamList extends React.Component {
     }
 
     handleSubmit = (value) => {
-        this.props.searchByName(value)
+        let modvalue = value.replace(/\s/g, "_");
+        this.props.searchByName(modvalue)
     }
 
     renderSearch = () => {

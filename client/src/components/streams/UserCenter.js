@@ -155,10 +155,13 @@ class UserCenter extends React.Component {
             <div>
                 <h1>Admin Center</h1>
                 {this.renderTotalReport()}
-                <SearchForm placeholder="enter Genre(Novel/Poetry...)" submit = {this.handleGenreSubmit}/>
+                <div style={{'padding-bottom': '40px'}} >
+                    <SearchForm placeholder="enter Genre(Novel/Poetry...)" submit = {this.handleGenreSubmit}/>
+                </div>
                 {this.getGenreReport()}
-
-                <SearchForm placeholder="enter Author Name" submit = {this.handleAuthorSubmit}/>
+                <div style={{'padding-bottom': '40px'}} >
+                    <SearchForm placeholder="enter Author Name" submit = {this.handleAuthorSubmit}/>
+                </div>
                 {this.getAuthorReport()}
             </div>
         )

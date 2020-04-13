@@ -38,7 +38,6 @@ class StreamList extends React.Component {
         if (isAdmin(this.props.currentUserId)) {
             return (
                 <div className="right floated content">
-                    <Link to={`/streams/edit/${stream.book_id}`} className="ui button primary">Edit</Link>
                     <button
                         className="ui button negative" onClick={
                         () => {
@@ -48,19 +47,6 @@ class StreamList extends React.Component {
                     >Delete</button>
                 </div>
             )
-        }else{ //customer!
-            return(
-                <div className="right floated content">
-                    <button
-                        className="ui button" onClick={
-                        () => {
-                            this.setState({ selectedStream: stream })
-                            this.setState({ renderModal: true })
-                        }}
-                    >Add to Basket</button>
-                </div>
-            )
-
         }
     }
     renderCreate() {

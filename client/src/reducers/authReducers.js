@@ -2,7 +2,8 @@ const INTIAL_STATE = {
     isSignIn: null,
     userId: null,
     name:null,
-    last_order: null
+    last_order: null,
+    orderDetail:null
 }
 export default (state = INTIAL_STATE, action) => {
     switch (action.type) {
@@ -12,6 +13,8 @@ export default (state = INTIAL_STATE, action) => {
             return { ...state, isSignIn: false, userId: null, name:null , email: null}
         case  'SEND_ORDER':
             return {...state, last_order: action.payload}
+        case 'CHECK_ORDER':
+            return {...state,orderDetail: action.payload }
         default:
             return state
     }

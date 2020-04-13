@@ -108,9 +108,13 @@ class StreamList extends React.Component {
             </>
         )
     }
+
+    submitSreach = () =>{
+
+    }
     renderSearch = () => {
         return (
-            <SearchForm/>
+            <SearchForm />
         )
     }
 

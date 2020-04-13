@@ -121,6 +121,12 @@ export const sendOrder = (value) => async (dispatch) => {
     history.push('/user_center')
 }
 
+export const checkOrder = (orderNum) => async dispatch => {
+    const response = await streams.get(`/check_order/${orderNum}`)
+    dispatch({
+        type: 'CHECK_ORDER', payload: response.data
+    })
+}
 
 
 export const deleteStream = (id) => async dispatch => {

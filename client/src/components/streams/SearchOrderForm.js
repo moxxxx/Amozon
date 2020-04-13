@@ -1,8 +1,8 @@
 import React from 'react'
-import {searchByName} from '../../actions'
+import { checkOrder } from '../../actions'
 import { connect } from 'react-redux'
 
-class SearchForm extends React.Component {
+class SearchOrderForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {value: ''};
@@ -15,9 +15,8 @@ class SearchForm extends React.Component {
     }
 
     handleSubmit(event) {
-        var keywords = this.state.value
-        keywords = keywords.replace(/\s/g, "_");
-        this.props.searchByName(keywords)
+        let keywords = this.state.trim()
+        this.props.checkOrder(keywords)
         event.preventDefault();
     }
 
@@ -25,14 +24,14 @@ class SearchForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className="ui fluid icon input">
-                    <input type="text" placeholder="Search a book..." value={this.state.value} onChange={this.handleChange} />
+                    <input type="text" placeholder="enter your order number..." value={this.state.value} onChange={this.handleChange} />
                     <button>
-                    <i className="search icon"  >
-                    </i>
+                        <i className="search icon"  >
+                        </i>
                     </button>
                 </div>
             </form>
         );
     }
 }
-export default connect(null, { searchByName})(SearchForm)
+export default connect(null, { checkOrder})(SearchOrderForm)

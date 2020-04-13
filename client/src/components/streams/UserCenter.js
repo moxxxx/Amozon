@@ -1,13 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
+import  {isAdmin} from '../common'
+import SearchOrderForm from './SearchOrderForm'
 
 class UserCenter extends React.Component {
 
     componentDidMount() {
     }
 
-    renderOrder = () =>{
+    renderLastOrder = () =>{
         if (this.props.lastOrder){
             return(
                 <div>
@@ -18,22 +19,55 @@ class UserCenter extends React.Component {
         }
     }
     render() {
-        if (this.props.isSignIn){
-            return (
-                <div>
-                    User center
-                    {this.renderOrder()}
-                </div>
-            )
+        if (this.props.userId && isAdmin(this.props.userId)){
+            return<div>{this.renderAdminPage()}</div>
         }else{
+
+            return<div>{this.renderUserPage()}</div>
+        }
+    }
+    renderAdminPage = () =>{
+        return(
+            <div>
+                <h1>Admin Center</h1>
+            </div>
+        )
+    }
+    renderGetOrder = () => {
+        if (this.props.orderDetail){
+            let orderDetail = this.props.orderDetail
             return(
                 <div>
-                  bad thing happened!
+                    <div>Order Number : {orderDetail.order_number}</div>
+                    <div>Total Value : {orderDetail.total_value}</div>
+                    <div>Shipping Status : {orderDetail.status}</div>
+                    <div>Total Value : {orderDetail.total_value}</div>
+                    <div>Credit Card Numb: {orderDetail.credit_num}</div>
+                    {orderDetail.isPaid ? (<div>Is Paid</div>) :  (<div>Has not yet paid</div>)
+                    }
                 </div>
             )
         }
 
     }
+
+    renderUserPage = () =>{
+        if (this.props.isSignIn){
+            return (
+                <div>
+                    <h1>User center</h1>
+                    {this.renderLastOrder()}
+                    <SearchOrderForm />
+                    {this.renderGetOrder()}
+                </div>
+            )
+        }else
+            return <div>bad thing happened!</div>
+    }
+
+
+
+
 }
 const mapStateToProps = (state) => {
     return {
@@ -41,7 +75,8 @@ const mapStateToProps = (state) => {
         isSignIn: state.auth.isSignIn,
         name: state.auth.name,
         email: state.auth.email,
-        lastOrder: state.auth.last_order
+        lastOrder: state.auth.last_order,
+        orderDetail: state.auth.orderDetail
     }
 }
 export default connect(mapStateToProps, { })(UserCenter)

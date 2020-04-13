@@ -59,10 +59,31 @@ class UserCenter extends React.Component {
             let genre = this.props.genreReport
             return(
                 <div>
-                    <div>Total amount : {genre.genre_amount}</div>
-                    <div>Total Sales  : {genre.genre_sales}</div>
-                    <div>Amount Last Month : {genre.genre_last_amount}</div>
-                    <div>Sales last Month : {genre.genre_last_sales}</div>
+                    <h4 className="ui horizontal divider header">
+                        <i className="bar chart icon"></i>
+                        Specifications
+                    </h4>
+
+                    <table className="ui definition table">
+                        <tbody>
+                        <tr>
+                            <td className="two wide column">Total amount</td>
+                            <td>{genre.genre_amount}</td>
+                        </tr>
+                        <tr>
+                            <td>Total Sales</td>
+                            <td>{genre.genre_sales}</td>
+                        </tr>
+                        <tr>
+                            <td>Amount Last Month</td>
+                            <td>{genre.genre_last_amount}</td>
+                        </tr>
+                        <tr>
+                            <td>Sales last Month</td>
+                            <td>{genre.genre_last_sales}</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             )
         }

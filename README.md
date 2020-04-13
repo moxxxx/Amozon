@@ -4,7 +4,7 @@ COMP3005 Project
 |||
 |:---|:---|
 |Zijian Zhen|Jiujiu Duan
-|101087006|101056037
+|101087006|101094923
 |zijian.zhen@cmail.carleton.ca|jojoduan@cmail.carleton.ca
 
 ###  Python Dependencies:

@@ -15,7 +15,8 @@ class SearchOrderForm extends React.Component {
     }
 
     handleSubmit(event) {
-        let keywords = this.state.trim()
+        let keywords = this.state.value.trim()
+        console.log(keywords)
         this.props.checkOrder(keywords)
         event.preventDefault();
     }

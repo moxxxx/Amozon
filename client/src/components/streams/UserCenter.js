@@ -43,7 +43,7 @@ class UserCenter extends React.Component {
                     <div>Shipping Status : {orderDetail.status}</div>
                     <div>Total Value : {orderDetail.total_value}</div>
                     <div>Credit Card Numb: {orderDetail.credit_num}</div>
-                    {orderDetail.isPaid ? (<div>Is Paid</div>) :  (<div>Has not yet paid</div>)
+                    {//orderDetail.isPaid ? (<div>Is Paid</div>) :  (<div>Has not yet paid</div>)
                     }
                 </div>
             )
@@ -52,7 +52,6 @@ class UserCenter extends React.Component {
     }
 
     renderUserPage = () =>{
-        if (this.props.isSignIn){
             return (
                 <div>
                     <h1>User center</h1>
@@ -61,11 +60,7 @@ class UserCenter extends React.Component {
                     {this.renderGetOrder()}
                 </div>
             )
-        }else
-            return <div>bad thing happened!</div>
     }
-
-
 
 
 }

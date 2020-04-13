@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {  deleteBook , getRecommended} from '../../actions'
+import {  deleteBook , getRecommended ,searchByName} from '../../actions'
 import { Link } from 'react-router-dom'
 import Modal from '../Modal'
 import {isAdmin} from "../common";
@@ -109,12 +109,13 @@ class StreamList extends React.Component {
         )
     }
 
-    submitSreach = () =>{
-
+    handleSubmit = (value) => {
+        this.props.searchByName(value)
     }
+
     renderSearch = () => {
         return (
-            <SearchForm />
+            <SearchForm placeholder="enter book name" submit = {this.handleSubmit}/>
         )
     }
 
@@ -142,4 +143,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { deleteBook, getRecommended })(StreamList)
+export default connect(mapStateToProps, { deleteBook, getRecommended , searchByName})(StreamList)

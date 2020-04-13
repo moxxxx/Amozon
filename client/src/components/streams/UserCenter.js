@@ -41,7 +41,7 @@ const mapStateToProps = (state) => {
         isSignIn: state.auth.isSignIn,
         name: state.auth.name,
         email: state.auth.email,
-        lastOrder: state.auth.lastOrder
+        lastOrder: state.auth.last_order
     }
 }
 export default connect(mapStateToProps, { })(UserCenter)

@@ -11,10 +11,9 @@ class Checkout extends React.Component {
         if (this.props.isSignIn && this.props.basket){
             let basket = this.props.basket
             let books = sumUpBooks(basket)
-            let orderInfo = {...formValues, ...books}
+            let orderInfo = {...formValues, ...books, cus_email: this.props.email}
             console.log(orderInfo)
             this.props.sendOrder(orderInfo)
-
             this.props.emptyBasket()
         }
 

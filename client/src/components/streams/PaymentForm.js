@@ -31,7 +31,6 @@ class PaymentForm extends React.Component {
             <form
                 className="ui form error"
                 onSubmit={this.props.handleSubmit(this.onSubmit)}>
-                <Field name="cus_email" component={this.renderInput} label="email" />
                 <Field name="recipients" component={this.renderInput} label="recipients" />
                 <Field name="ship_address" component={this.renderInput} label="Address" />
                 <Field name="credit_card" component={this.renderInput} label="Credit Card Number" />

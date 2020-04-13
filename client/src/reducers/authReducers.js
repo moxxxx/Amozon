@@ -2,7 +2,7 @@ const INTIAL_STATE = {
     isSignIn: null,
     userId: null,
     name:null,
-    lastOrder: null
+    last_order: null
 }
 export default (state = INTIAL_STATE, action) => {
     switch (action.type) {

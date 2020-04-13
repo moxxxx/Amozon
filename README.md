@@ -1,4 +1,4 @@
-COMP3005 Project
+COMP3005 Project-Amozon Online Bookstore
 -----------
 
 |||

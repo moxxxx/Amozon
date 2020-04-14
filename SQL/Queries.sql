@@ -1,3 +1,6 @@
+-- The Insert queries are included in the Sample_data.sql.
+-- So, in this file, there would be no Insert queries.
+
 
 -- Search for some key words, in this exaple key word = 'Harry'
 -- This query returns information of books that contians "Harry" in its book_name, author_name, for genre type
@@ -56,4 +59,10 @@ where author_name = 'J.K.Rowling') as foo;
 select Sum(amount) as Result from(
 select * from book natural join order_book natural join orders
 where order_date between (date_trunc('month', now())- interval '1 month')::date
-and date_trunc('month', now())::date-1 and book_name = 'Harry Potter' ) as foo
+and date_trunc('month', now())::date-1 and book_name = 'Harry Potter' ) as foo;
+
+-- update the book inverntory when book was sold.
+-- In this example, 3 book with book_id=1 was sold
+update book
+set inventory = inventory-3
+where book_id = 1;

@@ -26,4 +26,6 @@ COMP3005 Project-Amozon Online Bookstore
 * Open terminal at `client` folder
 * Execute `npm install` in the terminal
 * Execute `npm start` in the terminal
+* Make sure your hocalhost:3000 and 3002 port are available
+* email us to gain your own admin privilege
 * Enjoy the app!

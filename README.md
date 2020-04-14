@@ -5,7 +5,7 @@ COMP3005 Project-Amozon Online Bookstore
 |:---|:---|
 |Zijian Zhen|Jiujiu Duan
 |101087006|101094923
-|zijian.zhen@cmail.carleton.ca|jojoduan@cmail.carleton.ca
+|zijianzhen@cmail.carleton.ca|jojoduan@cmail.carleton.ca
 
 ###  Python Dependencies:
 |Library|version|
